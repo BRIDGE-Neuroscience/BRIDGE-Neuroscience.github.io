@@ -39,7 +39,7 @@
             </div>
             
             <p class="hero-tagline">
-                GPU-accelerated tractography for multi-scale connectomics
+                Graph-based tractography for terabyte-scale connectomics
             </p>
             
             <div class="hero-buttons">
@@ -65,10 +65,10 @@
             </div>
             <div class="about-content">
                 <p>
-                    BRIDGE (Brain Reconstruction via Iterative Directed Graph Extraction) is a pipeline for reconstructing white matter fiber pathways from high-resolution 3D synchrotron microscopy images.
+                    BRIDGE (Brain Reconstruction Integrating Distibuted Graph Estimates) is a pipeline for reconstructing white matter fiber pathways from high-resolution 3D synchrotron microscopy images.
                 </p>
                 <p>
-                    Developed as part of the NIH CONNECTS Centre, BRIDGE combines GPU-accelerated processing with parameter-free graph algorithms to handle terabyte-scale volumes while preserving biological topology.
+                    Developed as part of the Human Organ Atlas and CONNECTS Centre for Large-scale Imaging of Neural Circuits (LINC), BRIDGE combines GPU-accelerated processing with scalable graph algorithms to handle terabyte-scale volumes while preserving biological topology.
                 </p>
             </div>
         </div>
@@ -97,8 +97,8 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">🌳</div>
-                    <h3>Parameter-Free</h3>
-                    <p>Minimum spanning forest algorithms preserve biological topology without dataset-specific threshold tuning.</p>
+                    <h3>Sparse Structures</h3>
+                    <p>Sparse graphs reduce data volumes and computational cost of tractography in terabyte-scale volumes.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -176,6 +176,11 @@
 
     <!-- Footer -->
     <footer>
+        <div class="footer-logos">
+            <img src="assets/UCL.png" alt="UCL">
+            <img src="assets/ESRF.png" alt="ESRF">
+            <img src="assets/HOA.png" alt="LINC">
+        </div>
         <div class="footer-links">
             <a href="https://github.com/BRIDGE-Neuroscience">GitHub</a>
             <a href="https://test-docs-networks.readthedocs.io">Documentation</a>
@@ -184,6 +189,7 @@
             UCL Mechanical Engineering · European Synchrotron ESRF · Large Scale Imaging of Neural Circuits (LINC)
         </p>
     </footer>
+
 
     <!-- Particles.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>

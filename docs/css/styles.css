@@ -117,7 +117,7 @@ body {
 
 /* Logo - minimal padding, responsive */
 .logo-container {
-    width: 20vw;
+    width: 35vw;
     max-width: 400px;
     min-width: 180px;
     margin: 0 auto 1rem;
@@ -460,6 +460,26 @@ footer {
 .footer-text {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logos img {
+    height: 50px;
+    width: auto;
+    opacity: 0.5;
+    filter: brightness(0) invert(1); /* Makes logos white if they're dark */
+    transition: opacity 0.3s ease;
+}
+
+.footer-logos img:hover {
+    opacity: 0.8;
 }
 
 /* ==================== RESPONSIVE ==================== */
