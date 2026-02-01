@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRIDGE | Multi-scale Connectomics</title>
+    <meta name="description" content="GPU-accelerated tractography pipeline for high-resolution 3D microscopy imaging">
+    
+    <!-- Favicons (add your own) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <!-- Particles.js container -->
+        <div id="particles-js"></div>
+        
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="BRIDGE" onerror="this.src='assets/logo.svg'">
+            </div>
+            
+            <p class="hero-tagline">
+                GPU-accelerated tractography for multi-scale connectomics
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="https://test-docs-networks.readthedocs.io" class="btn btn-primary">
+                    Documentation
+                </a>
+                <a href="https://github.com/BRIDGE-Neuroscience" class="btn btn-secondary">
+                    GitHub
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <a href="#about"></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-heading">
+                <h2>About</h2>
+            </div>
+            <div class="about-content">
+                <p>
+                    BRIDGE (Brain Reconstruction via Iterative Directed Graph Extraction) is a pipeline for reconstructing white matter fiber pathways from high-resolution 3D synchrotron microscopy images.
+                </p>
+                <p>
+                    Developed as part of the NIH CONNECTS Centre, BRIDGE combines GPU-accelerated processing with parameter-free graph algorithms to handle terabyte-scale volumes while preserving biological topology.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Features</h2>
+                <p>Built for scale and reproducibility</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>GPU Accelerated</h3>
+                    <p>RAPIDS-powered processing with CuPy, cuGraph, and cuDF for structure tensor computation and graph algorithms.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Chunked Processing</h3>
+                    <p>Hierarchical divide-and-conquer approach handles volumes that exceed GPU memory with seamless boundary linking.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌳</div>
+                    <h3>Parameter-Free</h3>
+                    <p>Minimum spanning forest algorithms preserve biological topology without dataset-specific threshold tuning.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Dual Implementation</h3>
+                    <p>Python for GPU stages, Julia for CPU acceleration—use together in hybrid workflows for best performance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>BIDS Compatible</h3>
+                    <p>Standardised outputs integrate with existing neuroimaging workflows and TrackVis visualisation tools.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Synchrotron Ready</h3>
+                    <p>Designed for NIH CONNECTS and similar high-resolution microscopy initiatives worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Projects</h2>
+                <p>Open-source tools for connectomics research</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>BRIDGE.py</h3>
+                        <span class="project-lang">Python</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Primary implementation with GPU acceleration via RAPIDS ecosystem.</p>
+                        <ul class="project-features">
+                            <li>Structure tensor via CuPy</li>
+                            <li>Graph algorithms via cuGraph</li>
+                            <li>Dask distributed scheduling</li>
+                            <li>NIfTI-Zarr chunked storage</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/BRIDGE-Neuroscience/BRIDGE" class="project-link">Repository →</a>
+                            <a href="https://test-docs-networks.readthedocs.io" class="project-link">Docs →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>BRIDGE.jl</h3>
+                        <span class="project-lang">Julia</span>
+                    </div>
+                    <div class="project-body">
+                        <p>CPU acceleration for hierarchical linking and streamline export.</p>
+                        <ul class="project-features">
+                            <li>SuiteSparseGraphBLAS for sparse ops</li>
+                            <li>Native multi-threading</li>
+                            <li>~3× faster Core 3 processing</li>
+                            <li>Full Python interoperability</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/BRIDGE-Neuroscience/BRIDGE.jl" class="project-link">Repository →</a>
+                            <a href="https://test-docs-networks.readthedocs.io" class="project-link">Docs →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/BRIDGE-Neuroscience">GitHub</a>
+            <a href="https://test-docs-networks.readthedocs.io">Documentation</a>
+        </div>
+        <p class="footer-text">
+            UCL Mechanical Engineering · European Synchrotron ESRF · Large Scale Imaging of Neural Circuits (LINC)
+        </p>
+    </footer>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- Particles Configuration -->
+    <script src="js/particles-config.js"></script>
+    
+    <!-- Loading Screen Script -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 800);
+        });
+    </script>
+</body>
+</html>
