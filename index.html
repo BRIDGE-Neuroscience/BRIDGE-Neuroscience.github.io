@@ -115,37 +115,37 @@
             padding: 2rem;
         }
 
-        .logo-container {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 2rem;
-            background: var(--bg-primary);
-            border-radius: 50%;
-            box-shadow: 0 10px 60px rgba(50, 64, 104, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 4px solid rgba(150, 170, 212, 0.3);
+        /* --- Minor patch: make logo container invisible + responsive --- */
+        .logo-container{
+        width: 55vw;         /* adjustable % of page width */
+        max-width: 720px;    /* cap */
+        min-width: 240px;    /* floor */
+
+        height: auto;        /* stop forcing a circle */
+        margin: 0 auto 2rem;
+
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+
+        overflow: visible;   /* don't clip */
+        padding: 0;          /* no extra frame */
         }
 
-        .logo-container img {
-            max-width: 70%;
-            max-height: 70%;
-            object-fit: contain;
+        /* Let the image define the height and fill the container */
+        .logo-container img{
+        width: 100%;
+        max-width: 100%;     /* override your 70% */
+        height: auto;
+        max-height: none;    /* override max-height: 70% */
+        display: block;
+        object-fit: contain;
         }
 
-        /* Placeholder for logo */
-        .logo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-light);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        /* Optional: hide placeholder if it still exists */
+        .logo-placeholder{
+        display: none;
         }
 
         .hero-tagline {
@@ -506,7 +506,9 @@
         <canvas id="network-canvas"></canvas>
         
         <div class="hero-content">
-            <img class="hero-logo" src="assets/BRIDGE_logo_light.png" alt="BRIDGE" />
+            <div class="logo-container">
+                <img class="hero-logo" src="assets/BRIDGE_logo_light.png" alt="BRIDGE">
+            </div>
 
             <p class="hero-tagline">
                 GPU-accelerated tractography for multi-scale connectomics
@@ -517,7 +519,7 @@
                 <a href="https://github.com/BRIDGE-Neuroscience" class="btn btn-secondary">GitHub</a>
             </div>
         </div>
-                    
+        
         <div class="scroll-indicator">
             <a href="#about"></a>
         </div>
